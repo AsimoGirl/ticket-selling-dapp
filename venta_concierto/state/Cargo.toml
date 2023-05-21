@@ -1,0 +1,16 @@
+[package]
+name = "venta_concierto-state"
+version = "0.1.2"
+edition = "2021"
+
+[dependencies]
+gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["debug"] }
+gmeta = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["codegen"] }
+venta_concierto-io = { path = "../io" }
+gear-lib = { git = "https://github.com/gear-dapps/gear-lib.git", tag = "0.3.6" }
+
+[build-dependencies]
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["metawasm"] }
+
+[features]
+binary-vendor = []
