@@ -1,4 +1,4 @@
-use venta_concierto_io::*;
+use venta_boletos_io::*;
 use gear_lib::multitoken::io::{InitConfig, TokenMetadata};
 use gstd::{prelude::*, ActorId, Encode};
 use gtest::{Program, System};

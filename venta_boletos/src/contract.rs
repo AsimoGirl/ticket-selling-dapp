@@ -1,4 +1,4 @@
-use venta_concierto_io::*;
+use venta_boletos_io::*;
 use gear_lib::multitoken::io::*;
 use gstd::{errors::Result, msg, prelude::*, ActorId, MessageId};
 use hashbrown::{HashMap, HashSet};

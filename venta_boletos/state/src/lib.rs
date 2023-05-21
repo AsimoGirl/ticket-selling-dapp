@@ -1,6 +1,6 @@
 #![no_std]
 
-use venta_concierto_io::*;
+use venta_boletos_io::*;
 use gear_lib::multitoken::io::TokenMetadata;
 use gmeta::{metawasm, Metadata};
 use gstd::{prelude::*, ActorId};

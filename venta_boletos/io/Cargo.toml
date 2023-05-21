@@ -1,5 +1,5 @@
 [package]
-name = "venta_concierto-io"
+name = "venta_boletos-io"
 version = "0.1.2"
 edition = "2021"
 
