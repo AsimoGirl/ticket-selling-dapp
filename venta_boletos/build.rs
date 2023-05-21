@@ -1,4 +1,4 @@
-use venta_concierto_io::ContractMetadata;
+use venta_boletos_io::ContractMetadata;
 
 fn main() {
     gear_wasm_builder::build_with_metadata::<ContractMetadata>();
