@@ -1,32 +1,28 @@
 [package]
 name = "venta_concierto"
-version = "0.1.0"
+version = "0.1.2"
 edition = "2021"
-authors = ["Sandra Soto"]
+license = "MIT"
+authors = ["Gear Technologies"]
 
 [dependencies]
-#Son las herramientas de gear
 gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["debug"] }
 multitoken-io = { git = "https://github.com/gear-dapps/multitoken.git", tag = "0.3.5" }
 gear-lib = { git = "https://github.com/gear-dapps/gear-lib.git", tag = "0.3.6" }
-#Es para usar el hashmap
 hashbrown = "0.13"
 venta_concierto-io = { path = "io" }
 
 [dev-dependencies]
 venta_concierto-state = { path = "state", features = ["binary-vendor"] }
-#Son las herramientas de gear, el rev hace referencia al ultimo commit estable
 gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["debug"] }
 gtest = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68" }
 gclient = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68" }
-#Es un runtime asincrono de rust
 tokio = "1"
 
 [build-dependencies]
 venta_concierto-io = { path = "io" }
 gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68" }
 
-#El binary-vendor se usa para que gclient pueda acceder mas facil a los WASM binaries
 [features]
 binary-vendor = []
 

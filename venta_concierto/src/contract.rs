@@ -29,11 +29,9 @@ struct Concert {
     metadata: HashMap<ActorId, HashMap<u128, Option<TokenMetadata>>>,
 }
 
-//Guarda la instancia del contrato
 static mut CONTRACT: Option<Concert> = None;
 
 #[no_mangle]
-//unsafe extern "C" significa que la funcion podra interactuar con otros ambientes externos
 unsafe extern "C" fn init() {
     let config: InitConcert = msg::load().expect("Unable to decode InitConfig");
     let concert = Concert {
@@ -261,10 +259,10 @@ extern "C" fn state() {
     );
 }
 
-//Permite al programa verificar metadata en la cadena
 #[no_mangle]
 extern "C" fn metahash() {
     let metahash: [u8; 32] = include!("../.metahash");
+
     reply(metahash).expect("Failed to encode or reply with `[u8; 32]` from `metahash()`");
 }
 
