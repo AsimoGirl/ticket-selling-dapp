@@ -2,7 +2,7 @@
 //Este crate tiene como funcion determinar como toda la data de entrada y salida será
 //codificada y decodificada, permite que el smart contract y el cliente intercambien informacion
 
-//No usamos la biblioteca estandar de Rust en gear por las bibliotecas
+//No usamos la biblioteca estandar de Rust en gear porque sus bibliotecas la reescriben
 use gear_lib::multitoken::io::*;
 use gmeta::{In, InOut, Metadata};
 use gstd::{prelude::*, ActorId};
