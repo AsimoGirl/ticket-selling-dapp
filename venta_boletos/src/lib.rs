@@ -5,4 +5,5 @@
 mod contract;
 
 //Si se incluye binary-vendor en el Cargo el codigo genera un binario al compilarse
+#[cfg(feature = "binary-vendor")]
 include!(concat!(env!("OUT_DIR"), "/wasm_binary.rs"));
