@@ -1,3 +1,5 @@
+//Este crate tiene como funcion mostrar los valores del estado del smart contract
+
 #![no_std]
 
 use venta_boletos_io::*;
@@ -5,6 +7,8 @@ use gear_lib::multitoken::io::TokenMetadata;
 use gmeta::{metawasm, Metadata};
 use gstd::{prelude::*, ActorId};
 
+
+//Con este modulo le decimos al programa que debe mostrar el estado del contrato de forma decodificada
 #[metawasm]
 pub mod metafns {
     pub type State = <ContractMetadata as Metadata>::State;

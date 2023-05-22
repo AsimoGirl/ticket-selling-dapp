@@ -1,3 +1,4 @@
+//Este programa incluye funciones auxiliares para realizar pruebas
 use venta_boletos_io::*;
 use gear_lib::multitoken::io::{InitConfig, TokenMetadata};
 use gstd::{prelude::*, ActorId, Encode};
@@ -8,8 +9,9 @@ pub const MTK_ID: u64 = 2;
 pub const CONCERT_ID: u128 = 0;
 pub const NUMBER_OF_TICKETS: u128 = 100;
 pub const AMOUNT: u128 = 1;
-pub const DATE: u128 = 100000;
+pub const DATE: u128 = 210623;
 
+//Iniciamos el sistema
 pub fn init_system() -> System {
     let system = System::new();
     system.init_logger();
@@ -17,9 +19,13 @@ pub fn init_system() -> System {
     system
 }
 
+//Emulamos el inicio de un concierto, usamos directamente el wasm de multi_token que se obtiene al hacer make test
+//Ya que no tenemos un valor de smart contract de multi-token fijo
 pub fn init_concert(sys: &System) -> Program {
     let concert_program = Program::current(sys);
+    //Obtenemos el binario del smart contract de multi-token
     let mtk_program = Program::from_file(sys, "target/multi_token.wasm");
+    //Iniciamos el smart contract de multi-token
     let res = mtk_program.send(
         USER,
         InitConfig {
@@ -43,6 +49,7 @@ pub fn init_concert(sys: &System) -> Program {
     concert_program
 }
 
+//Creamos un concierto
 pub fn create(
     concert_program: &Program,
     creator: ActorId,
@@ -75,6 +82,7 @@ pub fn create(
     )));
 }
 
+//Compramos un boleto
 pub fn buy(
     concert_program: &Program,
     concert_id: u128,
@@ -91,12 +99,14 @@ pub fn buy(
     }
 }
 
+//Volvemos el boleto en NFT
 pub fn hold(concert_program: &Program, concert_id: u128) {
     let res = concert_program.send(USER, ConcertAction::Hold {});
 
     assert!(res.contains(&(USER, ConcertEvent::Hold { concert_id }.encode())));
 }
 
+//Revisa el estado actual del programa, viendo que los datos que se le envien son los que se pueden ver en el estado
 pub fn check_current_concert(
     concert_program: &Program,
     name: String,
@@ -130,6 +140,7 @@ pub fn check_current_concert(
     }
 }
 
+//Revisa que los boletos de un comprador sean correctos comparandolos con lo que muestra el estado
 pub fn check_user_tickets(
     concert_program: &Program,
     user: ActorId,
@@ -142,6 +153,7 @@ pub fn check_user_tickets(
     }
 }
 
+//Revisa que los compradores sean los mismos que los que estan en el estado del programa
 pub fn check_buyers(concert_program: &Program, buyers: Vec<ActorId>) {
     let state: State = concert_program.read_state().expect("Can't read state");
     if buyers != state.buyers {

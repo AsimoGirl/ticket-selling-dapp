@@ -1,11 +1,13 @@
 [package]
 name = "venta_boletos-io"
-version = "0.1.2"
+version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-gmeta = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68" }
-gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["debug"] }
+gmeta = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0" }
+gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0", features = ["debug"] }
 gear-lib = { git = "https://github.com/gear-dapps/gear-lib.git", tag = "0.3.6" }
+#scale-info es una libreria para codificar y decodificar tipos en Rust
 scale-info = { version = "2", default-features = false }
+#parity-scale-codec es usado por Substrate para serializar y deserializar informacion
 parity-scale-codec = { version = "3", default-features = false }
