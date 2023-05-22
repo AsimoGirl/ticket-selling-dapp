@@ -8,7 +8,7 @@ edition = "2021"
 #Son las dependencias necesarias para construir y correr el proyecto
 #gstd, gtest, gclient, multitoken-io y gear-lib son las bibliotecas de Gear en Rust
 #rev se refiere al hash del commit del ambiente estable de las bibliotecas
-gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0", features = ["debug"] }
+gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["debug"] }
 multitoken-io = { git = "https://github.com/gear-dapps/multitoken.git", tag = "0.3.5" }
 gear-lib = { git = "https://github.com/gear-dapps/gear-lib.git", tag = "0.3.6" }
 #Hashbrown se usa para poder usar hashmaps en el desarrollo
@@ -18,9 +18,9 @@ venta_boletos-io = { path = "io" }
 [dev-dependencies]
 #Son las dependencias usadas en pruebas y desarrollo
 venta_boletos-state = { path = "state", features = ["binary-vendor"] }
-gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0", features = ["debug"] }
-gtest = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0" }
-gclient = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0" }
+gstd = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68", features = ["debug"] }
+gtest = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68" }
+gclient = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68" }
 #tokio es un runtime asincrono en rust
 tokio = "1"
 
@@ -28,7 +28,7 @@ tokio = "1"
 #Son las dependencias usadas para construir el programa
 #Necesitamos el io porque usaremos metadata en el build
 venta_boletos-io = { path = "io" }
-gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0" }
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", rev = "5c685d0f15c412ab6ee019ceaf7ce084426dfb68" }
 
 [features]
 #Se usa sobretodo para los tests con gtest, introduce los binarios de WASM del contrato
