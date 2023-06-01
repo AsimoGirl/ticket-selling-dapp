@@ -37,6 +37,6 @@ make test
 make all
 ```
 
-Una vez que se construya el programa, para usarlo en Gear, ir a la página [idea.gear-tech.io][website] y en upload program introducir el archivo venta_boletos.opt.wasm que se encuentra en el directorio target/wasm32-unknown-unknown/release
+Una vez que se construya el programa, para usarlo en Gear, ir a la página <https://idea.gear-tech.io> y en upload program introducir el archivo venta_boletos.opt.wasm que se encuentra en el directorio target/wasm32-unknown-unknown/release
 
 
