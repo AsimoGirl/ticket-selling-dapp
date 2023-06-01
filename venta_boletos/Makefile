@@ -1,12 +1,10 @@
 all: init build test
 
 build:
-	@echo ⚙️ Building a release...
 	@cargo +nightly b -r --workspace -Fbinary-vendor
 	@ls -l target/wasm32-unknown-unknown/release/*.wasm
 
 init:
-	@echo ⚙️ Installing a toolchain \& a target...
 ifeq ($(shell uname -s),Linux)
 	@echo Linux detected..
 	make pin-toolchain-linux
