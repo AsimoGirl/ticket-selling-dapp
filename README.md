@@ -1,42 +1,42 @@
-# proyectoBlockchain
+# Ticket Selling DApp
 
-Desarrollo de una aplicación para la venta de boletos de un evento en Gear framework, parachain de Polkadot.
+The following is the development of a descentralized application for the sale of tickets for an event in Gear framework, Polkadot parachain.
 
+The comments are in Spanish as they were used for educational reasons.
 
-### Si no tiene Rust instalado con el toolchain de Gear en la computadora 
+### If you do not have Rust installed with the Gear toolchain on your computer
 
-Ejecute el siguiente comando
+Run the following command
 
 ```shell
 make init
 ```
 
-## Para construir el programa hacer lo siguiente
+## To build the program do the following
 
 ```shell
 make build
 ```
 
-o
+either
 
 ```shell
-cargo build --release
+charge build --release
 ```
 
-## Para correr las pruebas
+## To run the tests
 
-Es necesario correr el siguiente comando porque las pruebas necesitan del binario del smart contract de multi_token
+It is necessary to run the following command because the tests need the multi_token smart contract binary
 
 ```shell
 make test
 ```
 
-## Para ejecutar todo con un comando
+## To run everything with one command
 
-```shell
+``shell
 make all
 ```
 
-Una vez que se construya el programa, para usarlo en Gear, ir a la página <https://idea.gear-tech.io> y en upload program introducir el archivo venta_boletos.opt.wasm que se encuentra en el directorio target/wasm32-unknown-unknown/release
-
+Once the program is built, to use it in Gear, go to the page <https://idea.gear-tech.io> and in upload program enter the fileventa_boletos.opt.wasm found in the target/ directory wasm32-unknown-unknown/release
 
